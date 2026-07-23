@@ -3,7 +3,7 @@
 nixPkgs = ["nodejs-20_x"]
 
 [phases.install]
-cmds = ["npm install --include=dev", "npm rebuild"]
+cmds = ["npm install --include=dev"]
 
 [phases.build]
 cmds = ["node node_modules/vite/bin/vite.js build"]
