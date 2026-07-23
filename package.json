@@ -16,9 +16,7 @@
     "express": "^4.19.2",
     "express-rate-limit": "^7.3.0",
     "kdbxweb": "^2.1.1",
-    "sqlite3": "^5.1.7"
-  },
-  "devDependencies": {
+    "sqlite3": "^5.1.7",
     "vite": "^5.3.1"
   }
 }
