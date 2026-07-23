@@ -4,9 +4,9 @@
   "description": "Full-Stack KeePass Web Password Manager with Cyber Dark Grid UI and SQLite Server Persistence",
   "main": "server/index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview",
     "server": "node server/index.js",
     "start": "node server/index.js"
   },
