@@ -6,7 +6,7 @@ nixPkgs = ["nodejs-18_x", "npm-9_x"]
 cmds = ["npm install --include=dev"]
 
 [phases.build]
-cmds = ["npx vite build"]
+cmds = ["node node_modules/vite/bin/vite.js build"]
 
 [start]
 cmd = "node server/index.js"
