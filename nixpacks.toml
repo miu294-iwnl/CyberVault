@@ -1,4 +1,7 @@
 # Cấu hình chuẩn cho Railway / Nixpacks cho dự án Node.js + Vite
+[providers]
+node = "20"
+
 [phases.setup]
 nixPkgs = ["nodejs-20_x"]
 
