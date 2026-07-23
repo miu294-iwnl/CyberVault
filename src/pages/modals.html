@@ -1,0 +1,161 @@
+<!-- Modal: Add / Edit Password Entry -->
+<div id="entryModal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="modalTitle">THÊM MẬT KHẨU MỚI</h3>
+      <button id="btnCloseEntryModal" class="icon-btn">&times;</button>
+    </div>
+    <form id="entryForm" autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      <input type="hidden" id="entryUuid">
+      <div class="form-group">
+        <label for="entryTitle">Tên mục / Service *</label>
+        <input type="text" id="entryTitle" class="cyber-input" placeholder="VD: Gmail, Facebook, Server Prod" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="entryUsername">Tên đăng nhập / Email *</label>
+        <input type="text" id="entryUsername" class="cyber-input" placeholder="VD: user@email.com" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="entryPassword">Mật khẩu *</label>
+        <div class="input-wrapper">
+          <input type="text" id="entryPassword" class="cyber-input cyber-input-masked" placeholder="Nhập mật khẩu..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+          <button type="button" id="btnToggleEntryPassword" class="eye-toggle-btn" title="Hiện/Ẩn mật khẩu">👁️</button>
+        </div>
+        <div class="strength-meter">
+          <div id="sBar1" class="strength-bar"></div>
+          <div id="sBar2" class="strength-bar"></div>
+          <div id="sBar3" class="strength-bar"></div>
+        </div>
+        <div id="strengthHint" class="strength-hint">
+          💡 <strong>Mẹo mật khẩu mạnh:</strong> Dài 12+ ký tự, kết hợp chữ HOA, chữ thường, số & ký tự đặc biệt (!@#$)
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="entryUrl">Địa chỉ Website (URL)</label>
+        <input type="text" id="entryUrl" class="cyber-input" placeholder="VD: google.com hoặc facebook.com" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="entryCategory">Danh mục</label>
+        <select id="entryCategory" class="cyber-input">
+          <option value="Websites">Websites & Apps</option>
+          <option value="Email">Email & Communication</option>
+          <option value="Banking">Banking & Finance</option>
+          <option value="Server">Servers & Infrastructure</option>
+          <option value="Social">Social Media</option>
+          <option value="Shared">Shared Friends</option>
+          <option value="General" selected>General</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="entryNotes">Ghi chú bổ sung</label>
+        <textarea id="entryNotes" class="cyber-input" rows="3" placeholder="Ghi chú bí mật..." autocomplete="off"></textarea>
+      </div>
+      <button type="submit" class="cyber-btn" style="margin-top:1rem;">
+        <span>LƯU VÀO KHO KDBX</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Password Generator -->
+<div id="generatorModal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>⚡ TRÌNH TẠO MẬT KHẨU BẢO MẬT</h3>
+      <button id="btnCloseGenModal" class="icon-btn">&times;</button>
+    </div>
+    <div class="form-group">
+      <label>Mật khẩu ngẫu nhiên được khởi tạo:</label>
+      <div class="input-wrapper">
+        <input type="text" id="genResult" class="cyber-input" readonly style="font-family:var(--font-mono); font-size:1.1rem; color:var(--neon-emerald);" autocomplete="off">
+        <button id="btnCopyGen" class="cyber-btn btn-small" style="width:auto; margin-left:0.5rem;">Copy</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="genLength">Độ dài: <span id="genLengthVal" style="color:var(--neon-cyan)">20</span> ký tự</label>
+      <input type="range" id="genLength" min="8" max="64" value="20" style="width:100%;">
+    </div>
+    <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+      <label><input type="checkbox" id="genUpper" checked> Ký tự HOA (A-Z)</label>
+      <label><input type="checkbox" id="genLower" checked> Ký tự thường (a-z)</label>
+      <label><input type="checkbox" id="genNumbers" checked> Chữ số (0-9)</label>
+      <label><input type="checkbox" id="genSymbols" checked> Ký tự đặc biệt (!@#$)</label>
+    </div>
+    <button id="btnRegenerate" class="cyber-btn" style="margin-top:1rem;">
+      <span>TẠO MẬT KHẨU MỚI</span>
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Change Account Master Password -->
+<div id="changeMasterPasswordModal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>🔑 ĐỔI MẬT KHẨU KHO (.KDBX)</h3>
+      <button id="btnCloseChangePassModal" class="icon-btn">&times;</button>
+    </div>
+    <form id="changeMasterPasswordForm" autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      <div class="form-group">
+        <label for="currentMasterPass">Mật khẩu kho hiện tại *</label>
+        <input type="text" id="currentMasterPass" class="cyber-input cyber-input-masked" placeholder="Mật khẩu đang dùng..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      </div>
+      <div class="form-group">
+        <label for="newMasterPass">Mật khẩu kho MỚI *</label>
+        <input type="text" id="newMasterPass" class="cyber-input cyber-input-masked" placeholder="Mật khẩu mới..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      </div>
+      <div class="form-group">
+        <label for="confirmNewMasterPass">Xác nhận mật khẩu MỚI *</label>
+        <input type="text" id="confirmNewMasterPass" class="cyber-input cyber-input-masked" placeholder="Nhập lại mật khẩu mới..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      </div>
+      <button type="submit" class="cyber-btn" style="margin-top:1rem;">
+        <span>CẬP NHẬT MẬT KHẨU MỚI</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Add New Custom Category -->
+<div id="categoryModal" class="modal-overlay hidden">
+  <div class="modal-content" style="max-width:380px;">
+    <div class="modal-header">
+      <h3>THÊM DANH MỤC MỚI</h3>
+      <button id="btnCloseCategoryModal" class="icon-btn">✕</button>
+    </div>
+    <form id="categoryForm" autocomplete="off">
+      <div class="form-group">
+        <label for="newCategoryName">Tên danh mục mới *</label>
+        <input type="text" id="newCategoryName" class="cyber-input" placeholder="VD: Crypto, Games, Work..." required autocomplete="off">
+      </div>
+      <button type="submit" class="cyber-btn" style="margin-top:1rem;">
+        ➕ LƯU DANH MỤC
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Change Admin Account Password -->
+<div id="adminChangePassModal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>🔑 ĐỔI MẬT KHẨU TÀI KHOẢN ADMIN</h3>
+      <button id="btnCloseAdminChangePassModal" class="icon-btn">✕</button>
+    </div>
+    <form id="adminChangePassForm" autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      <div class="form-group">
+        <label for="currentAdminPass">Mật khẩu ADMIN hiện tại *</label>
+        <input type="text" id="currentAdminPass" class="cyber-input cyber-input-masked" placeholder="Mật khẩu admin hiện tại..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      </div>
+      <div class="form-group">
+        <label for="newAdminPass">Mật khẩu ADMIN MỚI *</label>
+        <input type="text" id="newAdminPass" class="cyber-input cyber-input-masked" placeholder="Mật khẩu admin mới (tối thiểu 6 ký tự)..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      </div>
+      <div class="form-group">
+        <label for="confirmNewAdminPass">Xác nhận mật khẩu MỚI *</label>
+        <input type="text" id="confirmNewAdminPass" class="cyber-input cyber-input-masked" placeholder="Nhập lại mật khẩu admin mới..." required autocomplete="off" data-lpignore="true" data-bwignore="true" data-1p-ignore="true">
+      </div>
+      <button type="submit" class="cyber-btn" style="margin-top:1rem;">
+        <span>🔑 CẬP NHẬT MẬT KHẨU ADMIN</span>
+      </button>
+    </form>
+  </div>
+</div>

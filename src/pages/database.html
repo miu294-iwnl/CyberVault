@@ -1,0 +1,35 @@
+<!-- Dashboard Toolbar (Search, Category Pills & Action Buttons) -->
+<div class="dashboard-toolbar">
+  <div class="search-box">
+    <input type="text" id="searchInput" class="cyber-input" placeholder="🔍 Tìm kiếm mật khẩu trong kho (Ctrl + K)..." autocomplete="off">
+  </div>
+
+  <div id="categoryPills" class="category-pills">
+    <button class="cat-pill active" data-cat="ALL">Tất cả</button>
+  </div>
+
+  <div class="action-buttons">
+    <button id="btnNewEntry" class="cyber-btn primary" style="width:auto;">
+      <span>+ THÊM MẬT KHẨU</span>
+    </button>
+
+    <!-- 1. Alphabet Sort Icon Button (Bên trái) -->
+    <div class="view-toggle-group" title="Sắp xếp theo Alphabet">
+      <button id="btnSortAlpha" class="view-toggle-btn active" title="Sắp xếp theo Alphabet (A-Z / Z-A)">🔤 ↓</button>
+    </div>
+
+    <!-- 2. Time Sort Icon Button (Bên phải) -->
+    <div class="view-toggle-group" title="Sắp xếp theo thời gian">
+      <button id="btnSortTime" class="view-toggle-btn" title="Sắp xếp theo thời gian (Mới nhất / Cũ nhất)">🕒 ↓</button>
+    </div>
+
+    <!-- Grid vs List View Switcher Buttons -->
+    <div class="view-toggle-group" title="Chuyển đổi kiểu hiển thị">
+      <button id="btnViewGrid" class="view-toggle-btn active" title="Dạng Thẻ (Grid)">🔲</button>
+      <button id="btnViewList" class="view-toggle-btn" title="Dạng Danh Sách (List)">☰</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dynamic Password Grid / List Container -->
+<div id="passwordGrid" class="password-grid"></div>

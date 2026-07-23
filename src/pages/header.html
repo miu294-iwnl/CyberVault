@@ -1,0 +1,87 @@
+<div class="brand-container">
+  <div class="cyber-logo-grid">
+    <div class="logo-square"></div>
+    <div class="logo-square"></div>
+    <div class="logo-square"></div>
+    <div class="logo-square"></div>
+  </div>
+  <div class="brand-title">CYBER<span>VAULT</span></div>
+</div>
+
+<div class="header-right-actions">
+  <div class="hud-status-bar">
+    <div class="hud-badge">
+      <div class="dot-indicator"></div>
+      <span>SERVER: ONLINE SYNC</span>
+    </div>
+  </div>
+
+  <div class="vault-dropdown-wrapper">
+    <button id="btnVaultDropdown" class="cyber-btn profile-btn">
+      <span class="lock-icon">🔒</span>
+      <span id="activeVaultFilename" class="vault-filename-tag">loading.kdbx</span>
+      <span class="caret">▾</span>
+    </button>
+
+    <!-- Dropdown Menu Panel -->
+    <div id="vaultDropdownMenu" class="vault-dropdown-menu hidden">
+      <div class="dropdown-header">
+        <div id="dropdownUsername" class="user-name-title">USER</div>
+        <div id="dropdownFilename" class="vault-filename-tag">vault.kdbx</div>
+        <div class="timer-display" style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-top:0.3rem;">🕒 Khóa trong: <span id="lockTimer" style="color:var(--neon-emerald);">05:00</span></div>
+      </div>
+
+      <div class="dropdown-actions">
+        <button id="btnOpenChangePass" class="dropdown-action-btn">
+          <span>🔑 Đổi Mật Khẩu Kho (.kdbx)</span>
+        </button>
+        <button id="btnOpenAdminChangePass" class="dropdown-action-btn hidden">
+          <span>🔑 Đổi Mật Khẩu Admin</span>
+        </button>
+        <button id="btnOpenGenerator" class="dropdown-action-btn">
+          <span>⚡ Trình Tạo Mật Khẩu Mạnh</span>
+        </button>
+        <button id="btnExportKdbx" class="dropdown-action-btn">
+          <span>💾 Xuất File Database (.kdbx)</span>
+        </button>
+        <button id="btnGoAdmin" class="dropdown-action-btn">
+          <span>🛡️ Trang Quản Trị Admin</span>
+        </button>
+        <div class="dropdown-divider"></div>
+        <button id="btnLogout" class="dropdown-action-btn danger">
+          <span>🔒 Đăng xuất Hệ Thống</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Hamburger Menu Button -->
+  <div class="mobile-menu-wrapper">
+    <button id="btnMobileMenu" class="hamburger-btn" title="Danh mục & Tìm kiếm">
+      <span class="hamburger-icon">☰</span>
+    </button>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobileMenuPanel" class="mobile-menu-panel hidden">
+      <div class="mobile-search-box">
+        <input type="text" id="mobileSearchInput" class="cyber-input" placeholder="🔍 Tìm kiếm mật khẩu...">
+      </div>
+
+      <div class="mobile-menu-divider"></div>
+      <div class="mobile-menu-title">SẮP XẾP DANH SÁCH</div>
+      <div style="display:flex; gap:0.5rem; margin-top:0.4rem;">
+        <button id="btnSortAlphaMobile" class="cyber-btn btn-small secondary" style="flex:1;">🔤 Alphabet</button>
+        <button id="btnSortTimeMobile" class="cyber-btn btn-small secondary" style="flex:1;">🕒 Thời Gian</button>
+      </div>
+
+      <div class="mobile-menu-divider"></div>
+      <div class="mobile-menu-title">DANH MỤC MẬT KHẨU</div>
+      <div id="mobileCategoryList" class="mobile-category-list"></div>
+
+      <div class="mobile-menu-divider"></div>
+      <button id="btnAddCategoryMobile" class="dropdown-action-btn" style="color:var(--neon-emerald);">
+        <span>➕ Thêm danh mục mới</span>
+      </button>
+    </div>
+  </div>
+</div>

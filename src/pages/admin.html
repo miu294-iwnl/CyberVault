@@ -1,0 +1,47 @@
+<div class="admin-header">
+  <div>
+    <h2 class="admin-title">🛡️ QUẢN TRỊ MÁY CHỦ (SYSTEM ADMIN)</h2>
+    <p class="admin-subtitle">Danh sách tài khoản & tệp kho mật khẩu (.kdbx) lưu trữ trên SQLite DB</p>
+  </div>
+  <button id="btnBackToDatabase" class="cyber-btn" style="width:auto;">
+    <span>← VỀ KHO MẬT KHẨU</span>
+  </button>
+</div>
+
+<!-- Admin Stats Cards -->
+<div class="admin-stats-grid">
+  <div class="stat-card">
+    <span class="stat-label">TỔNG TÀI KHOẢN SERVER</span>
+    <span id="statTotalUsers" class="stat-value" style="color:var(--neon-emerald)">0</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-label">TỔNG DUNG LƯỢNG .KDBX</span>
+    <span id="statTotalSize" class="stat-value" style="color:var(--neon-cyan)">0 KB</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-label">TRẠNG THÁI MÁY CHỦ</span>
+    <span class="stat-value" style="color:var(--neon-emerald)">ONLINE 🟢</span>
+  </div>
+</div>
+
+<!-- Accounts Cyber Data Table -->
+<div class="table-wrapper">
+  <table class="cyber-table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>TÀI KHOẢN</th>
+        <th>FILE DATABASE</th>
+        <th>DUNG LƯỢNG</th>
+        <th>NGÀY TẠO</th>
+        <th>LẦN CẬP NHẬT CUỐI</th>
+        <th style="text-align:right;">THAO TÁC</th>
+      </tr>
+    </thead>
+    <tbody id="adminUserTableBody">
+      <tr>
+        <td colspan="7" style="text-align:center; color:var(--text-muted); padding:2rem;">Đang tải danh sách từ server...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
